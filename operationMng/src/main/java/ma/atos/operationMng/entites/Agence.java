@@ -23,11 +23,11 @@ public class Agence {
     @Column(name = "location")
     private String localisation;
 
-    @OneToOne(mappedBy = "agence", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Caisse caisse;
+    @OneToMany(mappedBy = "agence")
+    private List<Caisse> caisseList;
 
     public void setCaisse(Caisse caisse) {
-        this.caisse = caisse;
+        this.caisseList = (List<Caisse>) caisse;
         caisse.setAgence(this);
     }
 }

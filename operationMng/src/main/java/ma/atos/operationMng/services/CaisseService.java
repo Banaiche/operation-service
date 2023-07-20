@@ -8,7 +8,7 @@ import java.util.List;
 public interface CaisseService {
     List<CaisseDTO> list();
     // CaisseDTO getCaisseById(Long id);
-    void addCaisse(CaisseDTO caisseDTO);
+    void saveCaisse(CaisseDTO caisseDTO);
 
     CaisseDTO getCaisseById(Long caisseId);
 
