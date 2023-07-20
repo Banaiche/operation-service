@@ -17,4 +17,7 @@ public class AgenceDTO {
     private String localisation;
     private List<ClientDTO> clientList;
     private DistributeurDTO distributeurDTO;
+    private CaisseDTO caisseDTO;
+
+
 }

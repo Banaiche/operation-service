@@ -4,6 +4,7 @@ import ma.atos.operationMng.dto.CaisseDTO;
 import ma.atos.operationMng.entites.Caisse;
 import ma.atos.operationMng.services.CaisseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -41,9 +42,9 @@ public class CaisseController {
     }
 
     @PostMapping("/add")
-    public String addCaisse (@RequestBody CaisseDTO caisseDTO){
-        caisseService.addCaisse(caisseDTO);
-        return "Les données sont bien enregistrer";
+    public ResponseEntity<String> addCaisse (@RequestBody CaisseDTO caisseDTO){
+        caisseService.saveCaisse(caisseDTO);
+        return ResponseEntity.ok("\"Les données sont bien enregistrer\"");
 
     }
 

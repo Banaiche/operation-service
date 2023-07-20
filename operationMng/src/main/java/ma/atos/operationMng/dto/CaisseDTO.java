@@ -1,16 +1,15 @@
 package ma.atos.operationMng.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ma.atos.operationMng.entites.Agence;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+
 import java.math.BigDecimal;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class CaisseDTO {
@@ -18,6 +17,12 @@ public class CaisseDTO {
     private long id;
     private String etat;
     private BigDecimal montant;
-    private AgenceDTO agence;
+   private Long agenceId;
+   public Long getAgenceId(){
+       return agenceId;
+   }
 
+    public void setAgenceId(Long agenceId) {
+        this.agenceId = agenceId;
+    }
 }

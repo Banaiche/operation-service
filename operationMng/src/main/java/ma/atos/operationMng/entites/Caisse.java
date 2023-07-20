@@ -39,5 +39,8 @@ public class Caisse {
     @Column(name = "montant")
     private BigDecimal montant;
 
+    @OneToOne
+    @JoinColumn(name = "agence_id")
+    private Agence agence;
 
 }
