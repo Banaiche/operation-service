@@ -1,7 +1,6 @@
 package ma.atos.operationMng.controllers;
 
 import ma.atos.operationMng.dto.CaisseDTO;
-import ma.atos.operationMng.entites.Caisse;
 import ma.atos.operationMng.services.CaisseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -46,6 +45,18 @@ public class CaisseController {
         caisseService.saveCaisse(caisseDTO);
         return ResponseEntity.ok("\"Les données sont bien enregistrer\"");
 
+    }
+
+    @GetMapping("/getCaisseById/{caisseId}")
+    public CaisseDTO getCaisseByRapp(@PathVariable(name = "caisseId") Long caisseId) {
+        CaisseDTO caisse = null;
+        try{
+            caisse=caisseService.getCaisseById(caisseId);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        return caisse;
     }
 
 }
